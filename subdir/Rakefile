@@ -1,0 +1,6 @@
+task :test do
+  Bundler.unbundled_system(Gem.ruby, "-w", "test.rb") ||
+    puts("+++ 💥 FAILED (exit #{$?.exitstatus})")
+end
+
+task default: "test"
